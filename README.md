@@ -1,4 +1,7 @@
-notification
+notifications-browserify
 ============
 
-Chrome notifications optimized for Browserify 
+Chrome notifications in a 
+Node module deisgn for the clientside with Browserify. 
+
+###Configure action
