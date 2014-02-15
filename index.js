@@ -7,6 +7,45 @@ var note = {
     , url     : 'http://duckduckgo.com'
 }
 
+//basic
+var opt = {
+  type: "basic",
+  title: "Primary Title",
+  message: "Primary message to display",
+  iconUrl: "url_to_small_icon"
+}
+//list
+var opt = {
+  type: "list",
+  title: "Primary Title",
+  message: "Primary message to display",
+  iconUrl: "url_to_small_icon",
+  items: [{ title: "Item1", message: "This is item 1."},
+          { title: "Item2", message: "This is item 2."},
+          { title: "Item3", message: "This is item 3."}]
+}
+
+//create
+chrome.notifications.create(string notificationId, NotificationOptions options, function callback)
+
+//update
+chrome.notifications.update(string notificationId, NotificationOptions options, function callback)
+
+//clear
+chrome.notifications.clear(string notificationId, function callback)
+//Events
+//onClosed
+//onClicked
+//onPermissionLevelChanged
+//onShowSettings
+
+chrome.notifications.onButtonClicked.addListener(note, callback);
+
+var callback = function(string, notificationId, integer, buttonIndex) {
+
+};
+
+
 function notify(note) {
   var havePermission = window.webkitNotifications.checkPermission();
   if (havePermission === 0) {
